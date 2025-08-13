@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5001
 // CORS middleware
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:5173', // Vite default port
-  credentials: true
+  credentials: true // allow frontend to send the cookies
 }));
 
 app.use(express.json());
