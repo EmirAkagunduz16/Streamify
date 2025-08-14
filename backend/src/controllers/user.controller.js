@@ -10,7 +10,7 @@ export async function getRecommendedUsers(req, res) {
     const recommendedUsers = await User.find({
       $and: [
         {_id: {$ne: currentUserId}}, // exclude current user
-        {$id: {$nin: currentUser.friends}}, // exclude current user's friends
+        {_id: {$nin: currentUser.friends}}, // exclude current user's friends
         {isOnboarded: true}
       ]
     })
@@ -23,7 +23,7 @@ export async function getRecommendedUsers(req, res) {
 
 export async function getMyFriends(req, res) {
   try {
-    const user = await User.findById(req.user.id).select("friends").populate("friends", "fullName, profilePic, nativeLanguage, learninLanguage");
+    const user = await User.findById(req.user.id).select("friends").populate("friends", "fullName profilePic nativeLanguage learningLanguage");
     res.status(200).json(user.friends);
   } catch (error) {
     console.error("Error in getMyFriends controller", error.message);

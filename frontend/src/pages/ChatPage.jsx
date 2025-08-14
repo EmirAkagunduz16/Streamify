@@ -42,6 +42,13 @@ const ChatPage = () => {
 
       try {
         console.log("Initializing stream chat client...");
+        
+        // Add validation for API key
+        if (!STREAM_API_KEY) {
+          console.error("Stream API key is missing!");
+          toast.error("Chat configuration error. Please check API key.");
+          return;
+        }
 
         const client = StreamChat.getInstance(STREAM_API_KEY);
 
