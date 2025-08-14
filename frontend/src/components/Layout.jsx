@@ -2,11 +2,11 @@ import Sidebar from './Sidebar'
 import NavBar from './NavBar'
 import React from 'react'
 
-const Layout = ({children, showSideBar}) => {
+const Layout = ({children, showSidebar}) => {
   return (
     <div className='min-h-screen'>
       <div className='flex'>
-        {showSideBar && <Sidebar />}
+        {showSidebar && <Sidebar />}
 
         <div className='flex-1 flex flex-col'>
           <NavBar />
