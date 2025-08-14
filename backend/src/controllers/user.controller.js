@@ -105,13 +105,11 @@ export async function acceptFriendRequest(req, res) {
 
 export async function getFriendRequest(req, res){
   try {
-    // Bana gelen pending istekler
     const incomingReqs = await FriendRequest.find({
       recipient: req.user.id,
       status: "pending"
     }).populate("sender", "fullName profilePic nativeLanguage learningLanguage");
 
-    // Benim gönderdiğim ve kabul edilmiş istekler (recent notifications için)
     const acceptedReqs = await FriendRequest.find({
       sender: req.user.id,
       status: "accepted"
