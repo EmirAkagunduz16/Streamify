@@ -108,9 +108,9 @@ const HomePage = () => {
                   >
                     <div className="card-body p-5 space-y-4">
                       <div className="flex items-center gap-3">
-                        <div className="avatar size-16 rounded-full">
+                        <Link to="/onboarding" className="avatar size-16 rounded-full cursor-pointer hover:opacity-80 transition-opacity">
                           <img src={user.profilePic} alt={user.fullName} />
-                        </div>
+                        </Link>
 
                         <div>
                           <h3 className="font-semibold text-lg">{user.fullName}</h3>

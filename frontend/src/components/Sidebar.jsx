@@ -53,11 +53,11 @@ const Sidebar = () => {
       {/* USER PROFILE SECTION */}
       <div className="p-4 border-t border-base-300 mt-auto">
         <div className="flex items-center gap-3">
-          <div className="avatar">
+          <Link to="/onboarding" className="avatar cursor-pointer hover:opacity-80 transition-opacity">
             <div className="w-10 rounded-full">
               <img src={authUser?.profilePic} alt="User Avatar" />
             </div>
-          </div>
+          </Link>
           <div className="flex-1">
             <p className="font-semibold text-sm">{authUser?.fullName}</p>
             <p className="text-xs text-success flex items-center gap-1">

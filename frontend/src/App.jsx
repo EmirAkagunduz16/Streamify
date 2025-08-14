@@ -91,11 +91,7 @@ const App = () => {
           path="/onboarding"
           element={
             isAuthenticated ? (
-              !isOnboarded ? (
-                <OnboardingPage />
-              ) : (
-                <Navigate to="/" />
-              )
+              <OnboardingPage />
             ) : (
               <Navigate to="/login" />
             )
